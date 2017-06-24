@@ -30,5 +30,5 @@ go build main.go
 
 
 * #### Langauge:
-  * ~ Python and NodeJS are good options, I really want to do a project in Go though. ~
+  * <s>Python and NodeJS are good options, I really want to do a project in Go though.</s>
   * It shall be go!
