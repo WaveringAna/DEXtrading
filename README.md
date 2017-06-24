@@ -1,6 +1,23 @@
 # DEXtrading
 ### Just some ideas I'm putting down before coding
 
+
+## Build:
+```
+export GOPATH=$(pwd)
+go get github.com/ethereum/go-ethereum
+go get github.com/rafaeldias/async
+
+go get github.com/aayanl/DEXtrading
+
+cd src/github.com/aayanl/DEXtrading
+
+go build main.go
+```
+
+
+## Specs:
+
 * #### p2p:
   * Hubs listing peers: Anyone can host these.
   * Peers connect to hub and gets an id (optional)
@@ -10,7 +27,8 @@
 
 * #### Trade:
   * TBD
-  
-  
+
+
 * #### Langauge:
-  * Python and NodeJS are good options, I really want to do a project in Go though.
+  * ~ Python and NodeJS are good options, I really want to do a project in Go though. ~
+  * It shall be go!
