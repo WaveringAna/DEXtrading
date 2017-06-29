@@ -1,9 +1,9 @@
 package peer
 
 import (
-    "fmt"
+	"fmt"
 
-    "github.com/aayanl/DEXtrading/logging"
+	"github.com/aayanl/DEXtrading/logging"
 
 	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/ethereum/go-ethereum/p2p"
@@ -22,20 +22,21 @@ func StartPeer() {
 		Name:       "DEX node",
 		ListenAddr: ":20200",
 		Protocols: []p2p.Protocol {
-            protoSendChall(),
-            protoConnectHub()
-        },
+			protoSendChall(),
+			protoConnectHub(),
+		},
 	}
 
-    srv := p2p.Server {
-        Config:     config,
-    }
+	srv := p2p.Server {
+        	Config:     config,
+    	}
 
 	if err := srv.Start(); err != nil {
 		fmt.Println(err);
 	} else {
-        logging.Write("Node started", true);
-    }
+		logging.Write("Node started", true);
+		fmt.Println(srv.Self());
+	}
 
 	select {}
 };
@@ -50,7 +51,7 @@ func protoSendChall() p2p.Protocol {
 };
 
 func protoConnectHub() p2p.Protocol {
-    return p2p.Protocol{
+	return p2p.Protocol{
 		Name:    "ConnectHub",
 		Version: 1,
 		Length:  1,
